@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <style>
+      img{
+        width: 100%;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+    <title>Responsive Image</title>
+  </head>
+
+  <body>
+  	<img src="sample.jpg" class="for-mob">
+    <script src="responsiveimage.js"></script>
+    <script>
+    $( document ).ready(function() {
+
+      var RI = new ResponsiveImage({
+        jQuery: $,
+        classSelector: '.for-mob',
+        toAppend: '_mobile',
+        minScreenSize: 768
+      });
+      RI.run();
+
+      $(window).resize(function() {
+        RI.run();
+      });
+    });
+    </script>
+  </body>
+</html>
