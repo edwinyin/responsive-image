@@ -33,7 +33,13 @@ or you can specify different options to suit your needs
 </script>
 ```
 
-remember to run the code each time the browser window resizes
+## Standard Options
+- `jQuery` - __Required__. This is required if you're using it for wordpress to fix jQuery conflict issues.
+- `classSelector` - The script will look for all object with the class specified here.
+- `toAppend` - The string that will be append to the name of the image for mobile, please make sure that all the images are named accordingly.
+- `minScreenSize` - The minimum screen size where the image will be swapped.
+
+Remember to run the code each time the browser window resizes
 
 ```html
 <script>
