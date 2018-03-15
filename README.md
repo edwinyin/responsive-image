@@ -1,20 +1,44 @@
-how to use
+# responsiveimage.js
 
-var RI = new ResponsiveImage();
-RI.run();
+In some situation you might need to swap an image with an image catered just for mobile. This class helps you to swap image as the browser window resizes, and save on bandwidth, as you don't need to load both images at once.
 
-or
+## Installation
 
-var RI = new ResponsiveImage({
-  jQuery: $,
-  classSelector: '.for-mob',
-  toAppend: '_mobile',
-  minScreenSize: 768
-});
-RI.run();
+jQuery is required for this script to work.
 
-run RI.run(); each time the window is resized
+```html
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+```
 
-$(window).resize(function() {
+## Basic Usage
+
+```html
+<script>
+  var RI = new ResponsiveImage();
   RI.run();
-});
+</script>
+```
+
+or you can specify different options to suit your needs
+
+```html
+<script>
+  var RI = new ResponsiveImage({
+    jQuery: $,
+    classSelector: '.for-mob',
+    toAppend: '_mobile',
+    minScreenSize: 768
+  });
+  RI.run();
+</script>
+```
+
+remember to run the code each time the browser window resizes
+
+```html
+<script>
+  $(window).resize(function() {
+    RI.run();
+  });
+</script>
+```
