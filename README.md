@@ -12,7 +12,11 @@ jQuery is required for this script to work.
 
 ## Basic Usage
 
+give the image a class of __for-mob__ and use __data-src__ for the image URL
+
 ```html
+<img class="for-mob" data-src="sample.jpg">
+
 <script>
   var RI = new ResponsiveImage();
   RI.run();
@@ -38,13 +42,3 @@ or you can specify different options to suit your needs
 - `classSelector` - The script will look for all object with the class specified here.
 - `toAppend` - The string that will be append to the name of the image for mobile, please make sure that all the images are named accordingly.
 - `minScreenSize` - The minimum screen size where the image will be swapped.
-
-Remember to run the code each time the browser window resizes
-
-```html
-<script>
-  $(window).resize(function() {
-    RI.run();
-  });
-</script>
-```

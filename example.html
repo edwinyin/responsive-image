@@ -10,7 +10,7 @@
   </head>
 
   <body>
-  	<img src="sample.jpg" class="for-mob">
+  	<img data-src="sample.jpg" class="for-mob">
     <script src="responsiveimage.js"></script>
     <script>
     $( document ).ready(function() {
@@ -20,11 +20,6 @@
         classSelector: '.for-mob',
         toAppend: '_mobile',
         minScreenSize: 768
-      });
-      RI.run();
-
-      $(window).resize(function() {
-        RI.run();
       });
     });
     </script>
