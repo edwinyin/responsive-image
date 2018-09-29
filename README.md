@@ -12,10 +12,10 @@ jQuery is required for this script to work.
 
 ## Basic Usage
 
-give the image a class of __for-mob__ and use __data-src__ for the image URL
+give the image a class of __for-mob__ and use __rimg__ tag
 
 ```html
-<img class="for-mob" data-src="sample.jpg">
+<rimg src="sample.jpg" class="for-mob">
 
 <script>
   var RI = new ResponsiveImage();

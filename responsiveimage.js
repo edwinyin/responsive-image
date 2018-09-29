@@ -12,8 +12,8 @@
 // });
 
 // sample image
-// use data-src
-// <img class="for-mob" data-src="coffeeday.jpg" alt="International Coffee Day">
+// use rimg
+// <rimg class="for-mob" src="{{ url('/') }}/images/mccafe/coffeeday.jpg" alt="International Coffee Day">
 
 (function() {
   var ResponsiveImage;
@@ -47,7 +47,11 @@
       var ri = this.options;
       var $ = ri.jQuery;
       $(ri.classSelector).each(function(){
-        var src = $(this).attr("data-src");
+        var src = $(this).attr("src");
+        var alt = $(this).attr("alt");
+        var cclass = $(this).attr("class");
+        var tagname = $(this).prop("tagName").toLowerCase();
+
         if($(window).width() < ri.minScreenSize){
           if(!src.includes(ri.toAppend)){
             var srcSplit = src.split("/");
@@ -55,15 +59,18 @@
             var fileExt = "."+imageString.pop();
             var newFileName = imageString[0]+ri.toAppend+fileExt;
             var oldFileName = imageString[0]+fileExt;
-            console.log(src);
             src = src.replace(oldFileName, newFileName);
-            $(this).attr("src", src);
           }
         }else{
           //for desktop screen
           src = src.replace(ri.toAppend,'');
-          $(this).attr("src", src);
         }
+          //to rename tag
+          if(tagname !== "img"){
+            $(this).replaceWith( '<img class="'+cclass+'" src="'+src+'" alt="'+alt+'">' );
+          }else{
+            $(this).attr("src", src);
+          }
 
       });
     }
